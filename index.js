@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 
-console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "local") {
   dotenv.config({ path: `./.env` });
 }
