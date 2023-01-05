@@ -1,12 +1,10 @@
-import bodyParser from 'body-parser';
-import express from 'express';
+import bodyParser from "body-parser";
+import express from "express";
+import eventRoutes from "./routes/events.js";
 
-import eventRoutes from './routes/events.js';
-
-const app = express();
-
-app.use(bodyParser.json());
-
-app.use(eventRoutes);
-
-app.listen(process.env.PORT);
+export default function bootstrap() {
+  const app = express();
+  app.use(bodyParser.json());
+  app.use(eventRoutes);
+  app.listen(process.env.PORT || 4000);
+}
